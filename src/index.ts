@@ -63,7 +63,16 @@ vm.addListener("EXTENSION_ADDED", (extensionInfo) => {
 // Load extension. Using _registerInternalExtension we avoid the sandboxing that
 // otherwise happens to extensions.
 const extension = new MyExtension();
-vm.extensionManager._registerInternalExtension(extension);
+const serviceName = vm.extensionManager._registerInternalExtension(extension);
+vm.extensionManager._loadedExtensions.set(extension.getInfo().id, serviceName);
+
+// Loading a project with blocks will trigger a 'workspaceUpdate' event. Listen to this
+// and let scratch blocks know that it should update the canvas
+vm.addListener("workspaceUpdate", (update) => {
+  const dom = ScratchBlocks.Xml.textToDom(update.xml);
+  console.log(dom)
+  ScratchBlocks.Xml.clearWorkspaceAndLoadFromXml(dom, workspace);
+});
 
 // Load project and we're off
 vm.loadProject(projectData()).then(() => {
