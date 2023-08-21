@@ -32,7 +32,7 @@ const projectData = (): object => {
         variables: {},
         lists: {},
         broadcasts: {},
-        blocks: {},
+        blocks: { "1f$jw-R6[jS{(8DW3W/o": { "opcode": "MyExtension_always", "next": "{$r0*XSyrD7i%iXr+?b.", "parent": null, "inputs": {}, "fields": {}, "shadow": false, "topLevel": true, "x": 63, "y": 105 }, "z`5wbu(vdKj!;lC]B=~k": { "opcode": "MyExtension_print", "next": null, "parent": "{$r0*XSyrD7i%iXr+?b.", "inputs": {}, "fields": {}, "shadow": false, "topLevel": false }, "{$r0*XSyrD7i%iXr+?b.": { "opcode": "control_repeat", "next": null, "parent": "1f$jw-R6[jS{(8DW3W/o", "inputs": { "TIMES": [1, [6, "10"]], "SUBSTACK": [2, "z`5wbu(vdKj!;lC]B=~k"] }, "fields": {}, "shadow": false, "topLevel": false } },
         currentCostume: 0,
         costumes: [
           {
